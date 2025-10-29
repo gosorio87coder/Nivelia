@@ -1,19 +1,25 @@
-// FIX: Import React to make the React namespace available for types like React.ReactNode.
-import React from 'react';
+// src/types.ts
+// Tipos “erasables” (no generan runtime). Compatibles con TS estricto.
 
-export enum Vertical {
-  TURISMO = "Turismo",
-  RETAIL = "Retail",
-  SALUD_WELLNESS = "Salud / Wellness",
-  OTRO = "Otro"
-}
+// ---------- Lead Form ----------
+export const VERTICAL_OPTIONS = [
+  'Belleza & Wellness',
+  'Turismo',
+  'Retail',
+  'Salud',
+  'Restaurantes',
+  'Educación',
+] as const;
+export type Vertical = typeof VERTICAL_OPTIONS[number];
 
-export enum MonthlyVolume {
-  INICIO = "Estoy empezando",
-  BAJO = "< $5,000 / mes",
-  MEDIO = "$5,000 - $25,000 / mes",
-  ALTO = "> $25,000 / mes"
-}
+export const MONTHLY_VOLUME_OPTIONS = [
+  'Inicio',
+  '1k–5k',
+  '5k–20k',
+  '20k–50k',
+  '50k+',
+] as const;
+export type MonthlyVolume = typeof MONTHLY_VOLUME_OPTIONS[number];
 
 export interface FormData {
   name: string;
@@ -27,13 +33,37 @@ export interface FormData {
   acceptPolicies: boolean;
 }
 
-export interface StackItem {
+// ---------- Agenda/Servicios (opcionales) ----------
+export interface Service {
+  id: number;
   name: string;
-  logo: React.ReactNode;
-  tooltip: string;
+  description?: string;
+  price: number;        // en tu moneda base
+  duration: number;     // minutos
 }
 
-export interface FaqItem {
-  question: string;
-  answer: string;
+export interface Location {
+  id: number;
+  name: string;
+  address: string;
 }
+
+export interface BookingDetails {
+  name: string;
+  email: string;
+  phone: string;
+  dni?: string;
+}
+
+// Paso del flujo (union en vez de enum)
+export type AppStep =
+  | 0 // DIAGNOSIS
+  | 1 // SERVICE_SELECTION
+  | 2 // LOCATION_DATA
+  | 3 // DATE_TIME
+  | 4 // CONFIRMATION
+;
+
+// ---------- Utilidades ----------
+export type AsyncStatus = 'idle' | 'loading' | 'success' | 'error';
+

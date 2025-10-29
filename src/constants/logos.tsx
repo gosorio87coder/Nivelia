@@ -1,4 +1,3 @@
-import React from 'react';
 
 // Using SVG components instead of <img> tags for reliability.
 // This prevents issues with broken external links or CORS policies.
