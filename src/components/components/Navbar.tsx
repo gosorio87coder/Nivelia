@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NiveliaLogo } from '../constants/icons';
+import { NiveliaLogo } from '../../constants/icons';
 
 const Navbar: React.FC = () => {
 
