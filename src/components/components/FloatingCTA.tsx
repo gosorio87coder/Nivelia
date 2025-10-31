@@ -1,5 +1,5 @@
 import React from 'react';
-import { CalendarIcon } from '../constants/icons';
+import { CalendarIcon } from '../../constants/icons';
 
 const FloatingCTA: React.FC = () => {
 

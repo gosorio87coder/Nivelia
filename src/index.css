@@ -1,2 +1,13 @@
 @import "tailwindcss";
 
+/* Opcional: tipografía por defecto */
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI,
+               Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji",
+               "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html, body, #root { height: 100%; }
+body { font-family: var(--font-sans); }
+
+

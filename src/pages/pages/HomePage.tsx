@@ -1,11 +1,12 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { 
     CheckIcon, ExploracionIcon, AlcanceIcon, LanzamientoIcon, IteracionIcon, 
     CalendarIcon, OccupancyIcon, FidelityIcon, ProductIcon, AssistantIcon, 
     VisibilityIcon, PostSaleIcon, CustomerIcon, AdsIcon 
-} from '../constants/icons';
-import SurveyComponent, { SurveyQuestion } from '../components/SurveyComponent';
+} from '../../constants/icons';
+import SurveyComponent, { SurveyQuestion } from '../../components/SurveyComponent';
 
 
 const HomePage: React.FC = () => {

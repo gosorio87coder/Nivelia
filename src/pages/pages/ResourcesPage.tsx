@@ -1,7 +1,7 @@
 
 import React from 'react';
-import LeadForm from '../components/LeadForm';
-import { CheckIcon } from '../constants/icons';
+import LeadForm from '../../components/LeadForm';
+import { CheckIcon } from '../../constants/icons';
 
 const ResourcesPage: React.FC = () => {
   return (
